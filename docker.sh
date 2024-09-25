@@ -12,15 +12,15 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
-
+# Install docker
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 sudo systemctl start docker
 sudo systemctl enable docker
-
+# Permissions
 sudo usermod -aG docker $USER
 newgrp docker
 sudo chmod 666 /var/run/docker.sock
-
+# Check docker versions
 docker -v
 docker compose version
 
