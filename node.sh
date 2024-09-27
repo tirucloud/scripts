@@ -1,18 +1,26 @@
 #!/bin/bash
-sudo apt install unzip -y
 
-# installs fnm (Fast Node Manager)
-curl -fsSL https://fnm.vercel.app/install | bash
+# Update the package index
+echo "Updating package index..."
+sudo apt update
 
-# activate fnm
-source ~/.bashrc
+# Install prerequisites
+echo "Installing prerequisites..."
+sudo apt install -y curl
 
-# download and install Node.js
-fnm use --install-if-missing 22
+# Download and install the Node.js v20.x PPA (Personal Package Archive)
+echo "Setting up Node.js 20.x repository..."
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 
-# verifies the right Node.js version is in the environment
-node -v # should print `v22.9.0`
+# Install Node.js
+echo "Installing Node.js 20..."
+sudo apt install -y nodejs
 
-# verifies the right npm version is in the environment
-npm -v # should print `10.8.3`
+# Verify installation
+echo "Node.js version:"
+node -v
 
+echo "npm version:"
+npm -v
+
+echo "Node.js 20 installation is complete!"
