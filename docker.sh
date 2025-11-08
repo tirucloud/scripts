@@ -18,11 +18,7 @@ sudo systemctl start docker
 sudo systemctl enable docker
 # Permissions
 sudo usermod -aG docker $USER
-newgrp docker
 sudo chmod 666 /var/run/docker.sock
-# Check docker versions
-docker -v
-docker compose version
 
 
 
