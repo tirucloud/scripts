@@ -10,5 +10,5 @@ sudo apt-get update
 sudo apt-get install jenkins -y
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
-# sudo usermod -aG docker jenkins
-# sudo systemctl restart jenkins
+sudo usermod -aG docker jenkins
+sudo systemctl restart jenkins
