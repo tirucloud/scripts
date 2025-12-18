@@ -172,3 +172,50 @@ subjects:
 ### Generate token using service account in the namespace
 
 [Create Token](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/#:~:text=To%20create%20a%20non%2Dexpiring,with%20that%20generated%20token%20data.)
+
+```bash
+kubectl get rs -n webapps
+kubectl get pods -n webapps
+
+
+kubectl edit rs boardgame-deployment-76b67b74cb -n webapps
+
+kubectl scale deployment boardgame-deployment --replicas=5 -n webapps
+
+
+
+kubectl patch svc boardgame-ssvc -n webapps \
+  -p '{"spec":{"type":"LoadBalancer"}}'
+  
+kubectl get svc boardgame-ssvc -n webapps
+
+
+
+kubectl get rs -n webapps -o wide
+kubectl get rs -n webapps
+kubectl scale deployment boardgame-deployment --replicas=2 -n webapps
+
+   86  kubectl get all -n webapps
+   87  kubectl delete svc boardgame-ssvc
+   88  kubectl apply -f ds.yml
+   89  kubectl get all -n webapps
+   90  kubectl get svc -n webapps
+   91  vi ds.yml
+   92  kubectl apply -f ds.yml
+   93  kubectl get svc -n webapps
+   94  kubectl describe svc boardgame-ssvc -n webapps
+   95  vi ds.yml
+   96  kubectl apply -f ds.yml
+   97  kubectl get svc -n webapps
+   98  vi ds.yml
+   99  kubectl apply -f ds.yml
+  100  kubectl get svc -n webapps
+  101  kubectl describe svc boardgame-ssvc -n webapps
+  102  kubectl patch svc boardgame-ssvc -n webapps   -p '{"spec":{"type":"LoadBalancer"}}'
+  103  kubectl get svc -n webapps
+
+
+eksctl get clusters
+aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE
+aws ec2 describe-instances --filters Name=tag:eks:cluster-name,Values=my-cluster
+```
