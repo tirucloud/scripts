@@ -220,5 +220,7 @@ kubectl scale deployment boardgame-deployment --replicas=2 -n webapps
 
 eksctl get clusters
 aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE
-aws ec2 describe-instances --filters Name=tag:eks:cluster-name,Values=my-cluster
+aws ec2 describe-instances --filters Name=tag:eks:cluster-name,Values=my-eks23
+
+eksctl delete cluster --name my-eks23 --region ap-south-1
 ```
