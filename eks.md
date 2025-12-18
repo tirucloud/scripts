@@ -92,7 +92,10 @@ eksctl create nodegroup --cluster=my-eks23 \
 
 * Open INBOUND TRAFFIC IN ADDITIONAL Security Group
 * Create Servcie account/ROLE/BIND-ROLE/Token
-
+## Create namespace webapps
+```bash
+kubectl create namespace webapps
+```
 ## Create Service Account, Role & Assign that role, And create a secret for Service Account and geenrate a Token
 
 ### Creating Service Account
