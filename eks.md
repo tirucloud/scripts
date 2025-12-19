@@ -76,9 +76,9 @@ eksctl create nodegroup --cluster=my-eks23 \
                        --region=ap-south-1 \
                        --name=node2 \
                        --node-type=t3.small \
-                       --nodes=3 \
+                       --nodes=2 \
                        --nodes-min=2 \
-                       --nodes-max=4 \
+                       --nodes-max=3 \
                        --node-volume-size=20 \
                        --ssh-access \
                        --ssh-public-key=thiru \
