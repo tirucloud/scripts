@@ -94,6 +94,7 @@ eksctl create nodegroup --cluster=my-eks23 \
 * Create Servcie account/ROLE/BIND-ROLE/Token
 ## Create namespace webapps
 ```bash
+aws eks update-kubeconfig --region ap-south-1 --name my-eks23
 kubectl create namespace webapps
 ```
 ## Create Service Account, Role & Assign that role, And create a secret for Service Account and geenrate a Token
