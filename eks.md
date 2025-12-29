@@ -222,3 +222,6 @@ aws ec2 describe-instances --filters Name=tag:eks:cluster-name,Values=my-eks23
 
 eksctl delete cluster --name my-eks23 --region ap-south-1
 ```
+```
+echo cGFzc3dvcmQxMjM= | base64 --decode
+```
