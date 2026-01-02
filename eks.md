@@ -183,6 +183,9 @@ metadata:
     kubernetes.io/service-account.name: jenkins
 ```
 ```bash
+kubectl -n webapps describe secret mysecretname
+```
+```bash
 kubectl get rs -n webapps
 kubectl get pods -n webapps
 
