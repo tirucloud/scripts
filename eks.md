@@ -235,6 +235,25 @@ aws ec2 describe-instances --filters Name=tag:eks:cluster-name,Values=my-eks23
 
 eksctl delete cluster --name my-eks23 --region ap-south-1
 ```
+```bash
+## 📦 Deploy Add-ons
+
+### ✅ EBS CSI Driver
+
+```bash
+kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/ecr/?ref=release-1.11"
+```
+
+### 🌐 NGINX Ingress Controller
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+```
+
+### 🔒 cert-manager
+
+```bash
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.yaml
 ```
 echo cGFzc3dvcmQxMjM= | base64 --decode
 ```
